@@ -1,0 +1,35 @@
+OpenSmile CMD - 
+SMILExtract -C C:\opensmile-3.0-win-x64\config\is09-13\IS09_emotion.conf -I D:\VocalCoach\Emotion\03-01-01-01-01-01-01.wav -O D:\VocalCoach\Emotion\outputnew.csv
+
+MFCC - Mel-frequency cepstral coefficients
+MFCCs are a representation of the short-term power spectrum of a sound signal
+
+MFCCs are widely used in audio processing because they effectively capture the timbral texture of sound, which is crucial for tasks like:
+
+Speech Recognition: MFCCs capture the phonetic content of speech by representing how sound frequencies are distributed over time.
+Speaker Recognition: The unique vocal tract characteristics of different speakers can be captured using MFCCs.
+Emotion Recognition: Emotional states often affect the spectral properties of speech, and MFCCs can capture these changes.
+Music Analysis: MFCCs are also used in music information retrieval for tasks like genre classification and music recommendation.
+
+
+SMILExtract -C config/is09-13/IS09_emotion.conf -I input_audio.wav -O output_features.arff
+
+
+for file in path_to_audio_files/*.wav; do
+    SMILExtract -C config/is09-13/IS09_emotion.conf -I "$file" -O output_features.arff
+done
+
+
+SMILExtract -C config/is09-13/IS09_emotion.conf -I example.wav -O example_features.arff
+
+SMILExtract -C C:\opensmile-3.0-win-x64\config\is09-13\IS09_emotion.conf -I D:\VocalCoach\03-01-01-01-01-02-01.wav -O D:\VocalCoach\Prepared\example_feature_1.arff
+D:\VocalCoach\Emotion\Emotions-recognition-from-audio-signal\myTry.ipynb
+
+SMILExtract -C config/is09-13/IS09_emotion.conf -I input_audio.wav -O output_features.csv
+
+
+config file *************
+writer.arffoutput.arff = 0
+writer.csvoutput.csv = 1
+
+SMILExtract -C C:\opensmile-3.0-win-x64\config\is09-13\IS09_emotion.conf -I D:\VocalCoach\Emotion\03-01-01-01-01-01-01.wav -O D:\VocalCoach\Emotion\outputfeaturenew.csv
